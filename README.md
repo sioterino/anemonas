@@ -41,6 +41,8 @@ O projeto está sendo desenvolvido para auxiliar na organização e acessibilida
 
 
 ## Histórico do Documento
-- **18/08/2025:** Primeira versão.
 
-
+| Data     | Autor | Edição                                    |
+| -------- | ----- | ----------------------------------------- |
+| 18/08/25 | Sant  | Esqueleto do documento.                   |
+| 18/08/25 | Júlia | Alinhamento com o documento de visão.     |
