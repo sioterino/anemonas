@@ -1,7 +1,7 @@
 # Diagrama de Classes
 ## User Domain
 
-**Casos de Uso Associados:** UC1, UC2
+**Casos de Uso Associados:** UC01, UC02;
 
 **Funcionalidades:** cadastro e autenticação de usuários.
 
@@ -40,9 +40,9 @@ classDiagram
     class UserController {
         service: UserService
         getAllUsers() List<User>
-        getUser(Long id) User
-        register(RegisterDTO dto) User
-        authenticate(LoginDTO dto) User
+        getUser(@RequestParam Long id) User
+        register(@RequestBody RegisterDTO dto) User
+        authenticate(@RequestBody LoginDTO dto) User
     }
 
     namespace DTOs {
