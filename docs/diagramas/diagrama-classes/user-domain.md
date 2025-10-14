@@ -5,6 +5,9 @@
 
 **Funcionalidades:** cadastro e autenticação de usuários.
 
+> [!NOTE]
+> Algumas funções, como edição e deleção não serão implementadas nesse primeiro momento por uma dependência do Spring Security que ainda será abordada e trabalhada em sala de aula.
+
 ```mermaid
 classDiagram
 
@@ -18,6 +21,9 @@ classDiagram
         chats: List~Chat~
         posts: List~ForumPost~
         replies: List~ForumReply~
+
+        postVotes: List~PostVote~
+        replyVotes: List~ReplyVote~
     }
 
     class Role {

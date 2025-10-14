@@ -4,6 +4,9 @@
 
 **Funcionalidades:** envio e acesso a mensagens entre dois usuários.
 
+> [!NOTE]
+> A aplicação dessas funcionalidades são fortemente dependentes de WebSocket e Spring Security.
+
 ```mermaid
 classDiagram
 

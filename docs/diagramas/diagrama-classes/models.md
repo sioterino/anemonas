@@ -15,6 +15,9 @@ classDiagram
             chats: List~Chat~
             posts: List~ForumPost~
             replies: List~ForumReply~
+
+            postVotes: List~PostVote~
+            replyVotes: List~ReplyVote~
         }
 
         class Role {
@@ -98,6 +101,27 @@ classDiagram
         class ForumReply {
             post: ForumPost
         }
+
+        class Vote {
+            id: Long
+            user: User
+            type: VoteType
+            timestamp: LocalDateTime
+        }
+
+        class PostVote {
+            post: ForumPost
+        }
+
+        class ReplyVote {
+            reply: ForumReply
+        }
+
+        class VoteType {
+            <<enum>>
+            type: String
+        }
+
     }
 
 ```

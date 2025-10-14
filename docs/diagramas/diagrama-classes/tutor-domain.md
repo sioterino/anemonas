@@ -5,6 +5,9 @@
 
 **Funcionalidades:** acessar perfil de tutores, acessar agenda de tutores, marcar datas de tutorias em uma agenda de tutor.
 
+> [!NOTE]
+> Algumas funções, como edição e deleção não serão implementadas nesse primeiro momento por uma dependência do Spring Security que ainda será abordada e trabalhada em sala de aula.
+
 ```mermaid
 classDiagram
 
