@@ -10,11 +10,11 @@ classDiagram
             username: String
             email: String
             password: String
-            roles: List<Role>
+            roles: List~Role~
 
-            messages: List<Message>
-            posts: List<ForumPost>
-            replies: List<ForumReply>
+            messages: List~Message~
+            posts: List~ForumPost~
+            replies: List~ForumReply~
         }
 
         class Role {
@@ -27,16 +27,16 @@ classDiagram
         class Tutor {
             id: Long
             user: User
-            subjects: List<Subjects>
-            availabilities: List<Availability>
-            appointments: List<Appointment>
+            subjects: List~Subjects~
+            availabilities: List~Availability~
+            appointments: List~Appointment~
             rating: Double
         }
 
         class Subject {
             id: Long
             name: String
-            tutors: List<Tutor>
+            tutors: List~Tutor~
         }
 
         class Availability {
@@ -86,7 +86,7 @@ classDiagram
         class ForumPost {
             title: String
             subject: Subject
-            replies: List<ForumReply>
+            replies: List~ForumReply~
         }
 
         class ForumReply {

@@ -11,16 +11,16 @@ classDiagram
     class Tutor {
         id: Long
         user: User
-        subjects: List<Subjects>
-        availabilities: List<Availability>
-        appointments: List<Appointment>
+        subjects: List~Subjects~
+        availabilities: List~Availability~
+        appointments: List~Appointment~
         rating: Double
     }
 
     class Subject {
         id: Long
         name: String
-        tutors: List<Tutor>
+        tutors: List~Tutor~
     }
 
     class Availability {
@@ -49,9 +49,9 @@ classDiagram
 
         class TutorController {
             service: TutorService
-            getAllTutors() List<Tutors>
+            getAllTutors() List~Tutors~
             getTutor(@RequestParam Long id) Tutor
-            getTutorsBySubject(@RequestParam String subject) List<Tutor>
+            getTutorsBySubject(@RequestParam String subject) List~Tutor~
         }
 
         class AppointmentController {
@@ -60,7 +60,7 @@ classDiagram
             createAppointment(@RequestBody AppointmentDTO dto) Appointment
             confirmAppointment(@RequestParam Long appointmentId) Appointment
             getAppointmentByTutor(@RequestParam Long TutorId) Appointment
-            getAppointmentsByStudent(@RequestParam Long studentId) List<Appointment>
+            getAppointmentsByStudent(@RequestParam Long studentId) List~Appointment~
             cancelAppointment(@RequestParam Long appointmentId) Appointment
         }
 
@@ -70,14 +70,14 @@ classDiagram
 
         class TutorService {
             repository: TutorRepository
-            getAllTutors() List<Tutor>
+            getAllTutors() List~Tutor~
             getTutor(Long id): Tutor
-            getTutorsBySubject(String subject) List<Tutor>
+            getTutorsBySubject(String subject) List~Tutor~
         }
 
         class AvailabilityService {
             repository: AvailabilityRepository
-            getAvailableTimeByTutor(Long tutorId) List<Availability>
+            getAvailableTimeByTutor(Long tutorId) List~Availability~
             addAvailability(AvailabilityDTO dto) Availability
             removeAvailability(long availabilityId) Availability
         }
@@ -87,7 +87,7 @@ classDiagram
             createAppointment(AppointmentDTO dto) Appointment
             confirmAppointment(Long appointmentId, boolean confirmed) Appointment
             getAppointmentByTutor(Long TutorId) Appointment
-            getAppointmentsByStudent(Long studentId) List<Appointment>
+            getAppointmentsByStudent(Long studentId) List~Appointment~
             cancelAppointment(Long appointmentId) Appointment
         }
 

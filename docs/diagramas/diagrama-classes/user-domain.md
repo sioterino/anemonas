@@ -13,11 +13,11 @@ classDiagram
         username: String
         email: String
         password: String
-        roles: List<Role>
+        roles: List~Role~
 
-        messages: List<Message>
-        posts: List<ForumPost>
-        replies: List<ForumReply>
+        messages: List~Message~
+        posts: List~ForumPost~
+        replies: List~ForumReply~
     }
 
     class Role {
@@ -31,7 +31,7 @@ classDiagram
 
     class UserService {
         repository: UserRepository
-        getAllUsers(Long id) List<User>
+        getAllUsers(Long id) List~User~
         getUser(Long id) User
         register(RegisterDTO dto) User
         authenticate(LoginDTO dto) User
@@ -39,7 +39,7 @@ classDiagram
 
     class UserController {
         service: UserService
-        getAllUsers() List<User>
+        getAllUsers() List~User~
         getUser(@RequestParam Long id) User
         register(@RequestBody RegisterDTO dto) User
         authenticate(@RequestBody LoginDTO dto) User
@@ -50,7 +50,7 @@ classDiagram
             username: String
             email: String
             password: String
-            roles: List<Role>
+            roles: List~Role~
         }
 
         class LoginDTO {
