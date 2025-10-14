@@ -26,7 +26,7 @@ flowchart TD
     A11 --> A12[Aguardar confirmação de email]
 
     A12 --> A14[Redirecionar para login]
-    A13 --> D3{Email confirmado em 24h?}
+    A12 --> D3{Email confirmado em 24h?}
 
     D3 -->|Sim| A15[Ativar conta]
     D3 -->|Não| A16[Manter conta inativa]
