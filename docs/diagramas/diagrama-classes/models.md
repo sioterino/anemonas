@@ -1,3 +1,6 @@
+# Diagrama de Classes
+## Models (Entidades Banco de Dados)
+
 ```mermaid
 classDiagram
 
