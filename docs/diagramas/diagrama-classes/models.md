@@ -12,7 +12,7 @@ classDiagram
             password: String
             roles: List~Role~
 
-            messages: List~Message~
+            chats: List~Chat~
             posts: List~ForumPost~
             replies: List~ForumReply~
         }
@@ -63,6 +63,12 @@ classDiagram
     }
 
     namespace chatDomain {
+        class Chat {
+            id: Long
+            participants: List~User~
+            messages: List~Messages~
+        }
+
         class Message {
             id: Long
             sender: User

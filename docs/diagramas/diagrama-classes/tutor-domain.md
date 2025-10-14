@@ -112,15 +112,15 @@ classDiagram
             date: Date
             startTime: LocalTime
             endTime: LocalTime
-            tutor: Tutor
+            tutorId: Long
         }
 
         class AppointmentDTO {
-            tutor: Tutor
-            student: User
+            tutorId: Long
+            studentId: Long
             dateTime: LocalDateTime
             confirmedByTutor: boolean
-            type: SessionType
+            type: String
         }
     }
 

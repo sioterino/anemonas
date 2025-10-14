@@ -15,7 +15,7 @@ classDiagram
         password: String
         roles: List~Role~
 
-        messages: List~Message~
+        chats: List~Chat~
         posts: List~ForumPost~
         replies: List~ForumReply~
     }
