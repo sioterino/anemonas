@@ -1,5 +1,6 @@
 package ifsc.ads.aeii.anemonas.models.schedule;
 
+import ifsc.ads.aeii.anemonas.models.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,13 +20,13 @@ public class Availability {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long tutorId;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "tutor_id")
+    private User tutor;
 
     @Column(nullable = false)
     private String subject;
 
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private DayOfWeek dayOfWeek;
 

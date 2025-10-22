@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -16,8 +17,16 @@ public class AppointmentController {
     private final AppointmentService appointmentService;
 
     @PostMapping
-    public ResponseEntity<Appointment> create(@RequestBody Appointment appointment) {
-        return ResponseEntity.ok(appointmentService.create(appointment));
+    public ResponseEntity<Appointment> create(
+            @RequestParam Long availabilityId,
+            @RequestParam Long studentId,
+            @RequestParam String date,  // formato yyyy-MM-dd
+            @RequestParam(required = false) String topic
+    ) {
+        LocalDate localDate = LocalDate.parse(date);
+        return ResponseEntity.ok(
+                appointmentService.create(availabilityId, studentId, localDate, topic)
+        );
     }
 
     @PutMapping("/{id}/confirmar")
@@ -35,7 +44,7 @@ public class AppointmentController {
         return ResponseEntity.ok(appointmentService.getByTutor(tutorId));
     }
 
-    @GetMapping("/estudante/{studentId}")
+    @GetMapping("/aluno/{studentId}")
     public ResponseEntity<List<Appointment>> getByStudent(@PathVariable Long studentId) {
         return ResponseEntity.ok(appointmentService.getByStudent(studentId));
     }

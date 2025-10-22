@@ -19,14 +19,17 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long availabilityId;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "availability_id")
+    private Availability availability;
 
-    @Column(nullable = false)
-    private Long studentId;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "student_id")
+    private User student;
 
-    @Column(nullable = false)
-    private Long tutorId;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "tutor_id")
+    private User tutor;
 
     @Column(nullable = false)
     private LocalDate date;
