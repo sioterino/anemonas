@@ -29,27 +29,27 @@ public class AppointmentController {
         );
     }
 
-    @PutMapping("/{id}/confirmar")
+    @PutMapping("/{id}/confirm")
     public ResponseEntity<Appointment> confirm(@PathVariable Long id) {
         return ResponseEntity.ok(appointmentService.confirm(id));
     }
 
-    @PutMapping("/{id}/cancelar")
+    @PutMapping("/{id}/cancel")
     public ResponseEntity<Appointment> cancel(@PathVariable Long id) {
         return ResponseEntity.ok(appointmentService.cancel(id));
     }
 
-    @GetMapping("/monitor/{tutorId}")
+    @GetMapping("/tutor/{tutorId}")
     public ResponseEntity<List<Appointment>> getByTutor(@PathVariable Long tutorId) {
         return ResponseEntity.ok(appointmentService.getByTutor(tutorId));
     }
 
-    @GetMapping("/aluno/{studentId}")
+    @GetMapping("/student/{studentId}")
     public ResponseEntity<List<Appointment>> getByStudent(@PathVariable Long studentId) {
         return ResponseEntity.ok(appointmentService.getByStudent(studentId));
     }
 
-    @GetMapping("/monitor/{tutorId}/pendentes")
+    @GetMapping("/tutor/{tutorId}/pending")
     public ResponseEntity<List<Appointment>> getPendingByTutor(@PathVariable Long tutorId) {
         return ResponseEntity.ok(appointmentService.getPendingByTutor(tutorId));
     }

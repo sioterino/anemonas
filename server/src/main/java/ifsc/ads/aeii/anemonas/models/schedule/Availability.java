@@ -27,6 +27,7 @@ public class Availability {
     @Column(nullable = false)
     private String subject;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private DayOfWeek dayOfWeek;
 
