@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom"
 import { useState } from "react"
 import { LoginPage } from "./pages/LoginPage"
 import { RegisterPage } from "./pages/RegisterPage"
@@ -23,14 +23,13 @@ export default function App() {
 
   const handleLogin = (name: string, email: string) => {
     const initials = name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)
-
     setUser({ name, email, avatar: initials })
   }
 
   const handleLogout = () => { setUser(null) }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         {/* Public routes */}
         <Route path="/" element={!user ? <LandingPage /> : <Navigate to="/community" replace />} />
@@ -66,6 +65,6 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         )}
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
