@@ -1,0 +1,40 @@
+.card {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  transition: all 0.2s;
+}
+
+.card.dark {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+  color: #6b7280;
+}
+
+.titleDark {
+  color: #9ca3af;
+}
+
+.value {
+  color: #111827;
+}
+
+.valueDark {
+  color: white;
+}
+
+.iconWrapper {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}

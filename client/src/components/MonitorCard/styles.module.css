@@ -1,0 +1,147 @@
+.card {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  transition: all 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card.dark {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom right, #ec4899, #ea580c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatarText {
+  color: white;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  margin-bottom: 0.25rem;
+  color: #111827;
+}
+
+.nameDark {
+  margin-bottom: 0.25rem;
+  color: white;
+}
+
+.role {
+  color: #6b7280;
+}
+
+.roleDark {
+  color: #9ca3af;
+}
+
+.description {
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+.descriptionDark {
+  color: #d1d5db;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.starIcon {
+  width: 1rem;
+  height: 1rem;
+  fill: #14b8a6;
+  color: #14b8a6;
+}
+
+.ratingText {
+  color: #374151;
+}
+
+.ratingTextDark {
+  color: #d1d5db;
+}
+
+.studentsText {
+  color: #6b7280;
+}
+
+.studentsTextDark {
+  color: #9ca3af;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.calendarIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #6b7280;
+}
+
+.iconDark {
+  color: #9ca3af;
+}
+
+.availabilityText {
+  color: #6b7280;
+}
+
+.availabilityTextDark {
+  color: #9ca3af;
+}
+
+.button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #14b8a6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #0f766e;
+}

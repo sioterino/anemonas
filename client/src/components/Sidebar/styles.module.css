@@ -1,0 +1,314 @@
+.mobileToggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: #111827;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .mobileToggle {
+    display: none;
+  }
+}
+
+.mobileToggle.dark {
+  background-color: #1f2937;
+  color: white;
+}
+
+.mobileIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .overlay {
+    display: none;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 16rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 40;
+  transition: transform 0.3s;
+  background-color: white;
+  border-right: 1px solid #e5e7eb;
+  transform: translateX(-100%);
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: sticky;
+    transform: translateX(0);
+  }
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar.dark {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.logo {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sidebar.dark .logo {
+  border-color: #374151;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: #ea580c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  color: white;
+  font-weight: 600;
+}
+
+.logoTitle {
+  color: #111827;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.sidebar.dark .logoTitle {
+  color: white;
+}
+
+.nav {
+  flex: 1;
+  padding: 1rem;
+}
+
+.menuList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  text-align: left;
+}
+
+.sidebar.dark .menuItem {
+  color: #d1d5db;
+}
+
+.menuItem:hover {
+  background-color: #f3f4f6;
+}
+
+.sidebar.dark .menuItem:hover {
+  background-color: #374151;
+}
+
+.menuItem.active {
+  background-color: #ea580c;
+  color: white;
+}
+
+.menuIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.userSection {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.sidebar.dark .userSection {
+  border-color: #374151;
+}
+
+.userDropdown {
+  position: relative;
+}
+
+.userButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.userButton:hover {
+  background-color: #f3f4f6;
+}
+
+.sidebar.dark .userButton:hover {
+  background-color: #374151;
+}
+
+.userAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom right, #14b8a6, #06b6d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.userAvatarText {
+  color: white;
+  font-weight: 500;
+}
+
+.userInfo {
+  flex: 1;
+  text-align: left;
+  min-width: 0;
+}
+
+.userName {
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.sidebar.dark .userName {
+  color: white;
+}
+
+.userRole {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.sidebar.dark .userRole {
+  color: #9ca3af;
+}
+
+.chevron {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s;
+  color: #6b7280;
+}
+
+.sidebar.dark .chevron {
+  color: #9ca3af;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.userMenu {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.dark .userMenu {
+  background-color: #374151;
+  border-color: #4b5563;
+}
+
+.logoutButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  text-align: left;
+}
+
+.sidebar.dark .logoutButton {
+  color: #d1d5db;
+}
+
+.logoutButton:hover {
+  background-color: #f3f4f6;
+}
+
+.sidebar.dark .logoutButton:hover {
+  background-color: #4b5563;
+}
+
+.logoutIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
